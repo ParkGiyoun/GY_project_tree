@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>GY LINK TREE</title>
+    <link rel="stylesheet" href="{% static 'tree/css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'tree/bootstrap/bootstrap.min.css' %}" type="text/css" />
+  </head>
+  <body class="body-color" id="page-top">
+    <!-- Header -->
+    <div class="sticky-top bg-header-color" id="mainNav">
+      <!-- Title -->
+      <div class="container" id="navTitle">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="#page-top" class="fs-1 navbar-brand fw-bold title-font-config">Giyoun Link Tree</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN Body 시작부분 -->
+    <!-- 고양이 그림 있는 Main header -->
+    <div class="text-white col-12 d-flex flex-wrap align-items-center justify-content-center">
+      <div class="bg-light-subtle cat-face">
+        <object data="{% static 'tree/image/cat-image-from-stability-removebg-preview.svg' %}" width="300" height="300"></object>
+      </div>
+      <h1 class="main-header-text text-uppercare text-center fw-bold col-12">START WITH GIYOUN</h1>
+      <hr class="cat-hr col-8" />
+    </div>
+
+    <!-- Portfolio BODY -->
+    <div class="p-3 pt-5 row text-white justify-content-center" id="PortfolioBody">
+      <h2 class="page-section-heading text-center text-uppercase text-white p-3 border-bottom">Portfolio</h2>
+
+      <!-- 반복문으로 데이터 불러오는 부분 -->
+      {% if linkinformation_list.exists %}
+      {% for l in linkinformation_list %}
+      <!-- portfolio -->
+      <a href="{{l.link}}" class="btn btn-light mx-3 col-md-5 col-lg-3 mb-5 d-flex flex-wrap align-items-center justify-content-center">
+        <img class="img-fluid" src="https://picsum.photos/400/400" alt="..." />
+        <h5 class="col-12 fw-bolder my-3 text-black text-center">{{l.linkTitle}}</h5>
+        <p class="col-12">{{l.linkSubtitle}}</p>
+      </a>
+      {% endfor %}
+      {% endif %}
+    </div>
+
+    <!-- About Body -->
+    <div class="p-3 py-5 bg-main-color" id="AboutBody">
+      <h2 class="page-section-heading text-center text-uppercase text-secondary p-3 border-bottom">About</h2>
+
+      <!-- About -->
+      <div class="text-center d-flex justify-content-center row">
+        <h4 class="col-12 mt-3 fw-bolder">Front-end & AI Open-source prompt Engineering</h4>
+        <div class="col-5 about-me-profile">
+          <object data="{% static 'tree/image/cat-image-from-stability-removebg-preview.svg' %}" width="300" height="300"></object>
+          <h5 class="fs-4 fw-bolder">개발자 박기윤</h5>
+        </div>
+        <!-- DB로 ADMIN은 바로바로 관리 할 수 있도록 할 예정. -->
+        <ul class="col-7 text-start px-4 py-3 align-items-center fs-5">
+          <li class="text-start mb-2"><b>학력</b>: 한국외국어대학교 산업경영공학과 20학번</li>
+          <li class="text-start mb-2"><b>동아리</b>: 2021-1 그누빌(GNUVIL) - 데이터사이언스 Project & Study</li>
+          <li class="text-start mb-2"><b>자격</b>: ADSP 데이터분석 준전문가 (ADsP-028002053)</li>
+          <li class="text-start mb-2">
+            <b>기술 스택</b>
+            <ol class="text-start f">
+              <li class="text-start">Python</li>
+              <li class="text-start">Django</li>
+
+              <li class="text-start">JAVA</li>
+              <li class="text-start">JS / Node / React</li>
+              <li class="text-start">SQL</li>
+            </ol>
+          </li>
+          <li class="text-start"><b>GIT</b>: <a href="https://github.com/ParkGiyoun">Git-hub Link</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact Body -->
+    <div class="p-3" id="ContactBody">
+      <h2 class="page-section-heading text-center text-uppercase text-white p-3 border-bottom">Contact</h2>
+
+      <!-- Contact -->
+      <div id="contact" class="p-3 text-white">
+        <h5 class="text-center">E-mail: cosil2b2@naver.com</h5>
+        <h5 class="text-center">Call : 준비 중</h5>
+      </div>
+    </div>
+
+    <!-- bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

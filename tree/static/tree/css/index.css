@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "party-confetti";
+  src: url(./font/PartyConfettiRegular-eZOn3.ttf) format("truetype");
+}
+.title-font-config {
+  font-family: "party-confetti";
+  font-size: 50px;
+}
+.cat-face {
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+.main-header-text {
+  font-size: 70px;
+  font-family: "party-confetti";
+  font-weight: 100;
+}
+.cat-hr {
+  border-top: 3px solid white;
+}
+
+.body-color {
+  background-color: #405386;
+}
+.bg-main-color {
+  background-color: #ffffff;
+}
+.bg-header-color {
+  background-color: #af93dc;
+}
+
+/* 포트폴리오 바디 부분 */
+.portfolio-white-body {
+  border-radius: 5%;
+}
+
+/* nav태그 클래스 디자인 */
+#mainNav ul {
+  list-style: none;
+}
+
+.nav-shrink {
+}
